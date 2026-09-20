@@ -1,0 +1,1 @@
+# BG-Remover-Privacy-Policy
