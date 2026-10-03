@@ -11,6 +11,7 @@
             --heading: #111111;
             --muted: #666666;
             --rule: #e2e2e2;
+            --field: #f5f5f6;
         }
         @media (prefers-color-scheme: dark) {
             :root {
@@ -19,10 +20,11 @@
                 --heading: #f2f3f4;
                 --muted: #9a9ea4;
                 --rule: #2c2f34;
+                --field: #202328;
             }
         }
         body {
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Hiragino Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
             font-size: 18px;
             line-height: 1.6;
             max-width: 800px;
@@ -31,6 +33,28 @@
             color: var(--text);
             background: var(--bg);
         }
+        .lang-bar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1.5em;
+        }
+        .lang-bar select {
+            font: inherit;
+            font-size: 0.85em;
+            color: var(--text);
+            background: var(--field);
+            border: 1px solid var(--rule);
+            border-radius: 8px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+        .lang-bar select:focus-visible {
+            outline: 2px solid var(--muted);
+            outline-offset: 2px;
+        }
+        [hidden] { display: none !important; }
         h1 {
             color: var(--heading);
             margin-bottom: 0.25em;
@@ -42,7 +66,7 @@
             padding-top: 1em;
             border-top: 1px solid var(--rule);
         }
-        p { margin: 0 0 1em; }
+        p { margin: 0 0 1em; overflow-wrap: anywhere; }
         .updated {
             color: var(--muted);
             font-size: 0.9em;
@@ -51,48 +75,401 @@
     </style>
 </head>
 <body>
-    <h1>Privacy Policy for BG Remover</h1>
-    <p class="updated">Last updated: [DATE]</p>
+    <nav class="lang-bar">
+        <label for="lang-select" aria-label="Language">🌐</label>
+        <select id="lang-select" aria-label="Language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="it">Italiano</option>
+            <option value="nl">Nederlands</option>
+            <option value="pt">Português</option>
+            <option value="ru">Русский</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+        </select>
+    </nav>
 
-    <p>
-        BG Remover is published by [DEVELOPER OR COMPANY NAME]. This policy explains
-        what the app does and does not do with your information.
-    </p>
+    <article lang="en" data-lang="en">
+        <h1>Privacy Policy for BG Remover</h1>
+        <p class="updated">Last updated: October 3, 2026</p>
 
-    <h2>No data collection</h2>
-    <p>
-        BG Remover does not collect, store, or share any personal data.
-    </p>
+        <p>BG Remover is published by ScualiMaster. This policy explains what the app does and does not do with your information.</p>
 
-    <h2>On-device processing</h2>
-    <p>
-        All image processing, including background removal, happens entirely on your
-        device. Your photos are never uploaded to a server and are never seen by us.
-    </p>
+        <h2>No collection of your photos or personal data</h2>
+        <p>We do not collect, store, or share your photos or any personal data. The only data collected through the app is by Google AdMob for advertising purposes, as described in the “Advertising &amp; Google AdMob” section below.</p>
 
-    <h2>Permissions</h2>
-    <p>
-        <strong>Camera:</strong> used only to take photos inside the app.
-    </p>
-    <p>
-        <strong>Storage:</strong> used only to save your edited images to your gallery.
-    </p>
+        <h2>On-device AI image processing</h2>
+        <p>BG Remover utilizes the Google ML Kit Subject Segmentation API for AI-powered background removal and subject isolation. All image processing occurs 100% locally on your mobile device. Your photos, camera captures, and edited images are never uploaded, transmitted, or stored on any remote server, and no biometric or personal identification data is collected or extracted.</p>
 
-    <h2>No third parties</h2>
-    <p>
-        We do not share any information with third parties.
-    </p>
+        <h2>Permissions</h2>
+        <p><strong>Camera:</strong> used only to take photos inside the app.</p>
+        <p><strong>Storage:</strong> used only to save your edited images to your gallery.</p>
 
-    <h2>Changes to this policy</h2>
-    <p>
-        If this policy changes, the updated version will be posted on this page with a
-        new "Last updated" date.
-    </p>
+        <h2>Advertising &amp; Google AdMob</h2>
+        <p>BG Remover displays advertisements provided by Google AdMob. Google AdMob may collect and use device identifiers (such as the Android Advertising ID), network information, and diagnostic metrics to serve, personalize, and measure advertisements.</p>
+        <p>In the European Economic Area (EEA) and the United Kingdom (UK), ad personalization consent is managed via Google's User Messaging Platform (UMP) consent dialog. Users can review, adjust, or revoke their ad privacy choices at any time inside the app's Settings &gt; Ad Privacy Preferences.</p>
+        <p>To learn more about how Google handles data in partner apps, please visit: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
 
-    <h2>Contact</h2>
-    <p>
-        Questions about this policy? Email us at
-        <a href="mailto:[YOUR-EMAIL]">[YOUR-EMAIL]</a>.
-    </p>
+        <h2>In-app purchases &amp; payment data</h2>
+        <p>BG Remover offers an optional “Remove All Ads” (€3.99) one-time in-app purchase processed securely by the Google Play Billing Library. All payment transactions, credit card details, and billing information are handled directly and securely by Google Play. BG Remover does not collect, store, or have access to your financial or credit card information.</p>
+
+        <h2>Third parties</h2>
+        <p>We do not sell your information or share your photos with anyone. The only third-party services used by the app are Google AdMob (advertising) and Google Play (in-app purchases), each of which operates under its own privacy policy as described above.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>If this policy changes, the updated version will be posted on this page with a new “Last updated” date.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about this policy? Email us at <a href="mailto:scualimail@gmail.com">scualimail@gmail.com</a>.</p>
+    </article>
+
+    <article lang="es" data-lang="es" hidden>
+        <h1>Política de privacidad de BG Remover</h1>
+        <p class="updated">Última actualización: 3 de octubre de 2026</p>
+
+        <p>BG Remover es publicado por ScualiMaster. Esta política explica qué hace y qué no hace la aplicación con tu información.</p>
+
+        <h2>No recopilamos tus fotos ni datos personales</h2>
+        <p>No recopilamos, almacenamos ni compartimos tus fotos ni ningún dato personal. Los únicos datos recopilados a través de la aplicación son los que recoge Google AdMob con fines publicitarios, como se describe en la sección «Publicidad y Google AdMob» más abajo.</p>
+
+        <h2>Procesamiento de imágenes con IA en el dispositivo</h2>
+        <p>BG Remover utiliza la API Subject Segmentation de Google ML Kit para eliminar fondos y aislar sujetos mediante IA. Todo el procesamiento de imágenes se realiza al 100 % de forma local en tu dispositivo móvil. Tus fotos, capturas de cámara e imágenes editadas nunca se suben, transmiten ni almacenan en ningún servidor remoto, y no se recopilan ni extraen datos biométricos ni de identificación personal.</p>
+
+        <h2>Permisos</h2>
+        <p><strong>Cámara:</strong> se utiliza únicamente para tomar fotos dentro de la aplicación.</p>
+        <p><strong>Almacenamiento:</strong> se utiliza únicamente para guardar tus imágenes editadas en la galería.</p>
+
+        <h2>Publicidad y Google AdMob</h2>
+        <p>BG Remover muestra anuncios proporcionados por Google AdMob. Google AdMob puede recopilar y utilizar identificadores del dispositivo (como el ID de publicidad de Android), información de red y métricas de diagnóstico para mostrar, personalizar y medir los anuncios.</p>
+        <p>En el Espacio Económico Europeo (EEE) y el Reino Unido, el consentimiento para la personalización de anuncios se gestiona mediante el cuadro de diálogo de consentimiento de la Plataforma de mensajes para usuarios (UMP) de Google. Los usuarios pueden revisar, modificar o revocar sus opciones de privacidad publicitaria en cualquier momento en Ajustes &gt; Preferencias de privacidad de anuncios dentro de la aplicación.</p>
+        <p>Para obtener más información sobre cómo gestiona Google los datos en aplicaciones de socios, visita: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
+
+        <h2>Compras dentro de la aplicación y datos de pago</h2>
+        <p>BG Remover ofrece una compra integrada opcional de pago único, «Eliminar todos los anuncios» (3,99 €), procesada de forma segura mediante la biblioteca Google Play Billing. Todas las transacciones de pago, los datos de tarjetas de crédito y la información de facturación son gestionados directamente y de forma segura por Google Play. BG Remover no recopila, almacena ni tiene acceso a tu información financiera ni a los datos de tu tarjeta de crédito.</p>
+
+        <h2>Terceros</h2>
+        <p>No vendemos tu información ni compartimos tus fotos con nadie. Los únicos servicios de terceros que utiliza la aplicación son Google AdMob (publicidad) y Google Play (compras dentro de la aplicación), cada uno de los cuales funciona conforme a su propia política de privacidad, tal y como se describe arriba.</p>
+
+        <h2>Cambios en esta política</h2>
+        <p>Si esta política cambia, la versión actualizada se publicará en esta página con una nueva fecha de «Última actualización».</p>
+
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas sobre esta política? Escríbenos a <a href="mailto:scualimail@gmail.com">scualimail@gmail.com</a>.</p>
+    </article>
+
+    <article lang="de" data-lang="de" hidden>
+        <h1>Datenschutzerklärung für BG Remover</h1>
+        <p class="updated">Zuletzt aktualisiert: 3. Oktober 2026</p>
+
+        <p>BG Remover wird von ScualiMaster veröffentlicht. Diese Erklärung beschreibt, was die App mit Ihren Informationen tut und was nicht.</p>
+
+        <h2>Keine Erfassung Ihrer Fotos oder personenbezogenen Daten</h2>
+        <p>Wir erfassen, speichern oder teilen weder Ihre Fotos noch andere personenbezogene Daten. Die einzigen über die App erfassten Daten stammen von Google AdMob zu Werbezwecken, wie im Abschnitt „Werbung und Google AdMob“ unten beschrieben.</p>
+
+        <h2>KI-Bildverarbeitung auf dem Gerät</h2>
+        <p>BG Remover nutzt die Google ML Kit Subject Segmentation API für KI-gestützte Hintergrundentfernung und Motivfreistellung. Die gesamte Bildverarbeitung erfolgt zu 100 % lokal auf Ihrem Mobilgerät. Ihre Fotos, Kameraaufnahmen und bearbeiteten Bilder werden niemals auf einen Remote-Server hochgeladen, übertragen oder dort gespeichert, und es werden keine biometrischen oder zur persönlichen Identifizierung dienenden Daten erfasst oder extrahiert.</p>
+
+        <h2>Berechtigungen</h2>
+        <p><strong>Kamera:</strong> wird ausschließlich zum Aufnehmen von Fotos in der App verwendet.</p>
+        <p><strong>Speicher:</strong> wird ausschließlich zum Speichern Ihrer bearbeiteten Bilder in der Galerie verwendet.</p>
+
+        <h2>Werbung und Google AdMob</h2>
+        <p>BG Remover zeigt Werbung von Google AdMob an. Google AdMob kann Gerätekennungen (z. B. die Android-Werbe-ID), Netzwerkinformationen und Diagnosedaten erfassen und verwenden, um Werbung auszuliefern, zu personalisieren und zu messen.</p>
+        <p>Im Europäischen Wirtschaftsraum (EWR) und im Vereinigten Königreich wird die Einwilligung zur Anzeigenpersonalisierung über den Einwilligungsdialog der User Messaging Platform (UMP) von Google verwaltet. Nutzer können ihre Datenschutzeinstellungen für Werbung jederzeit in der App unter Einstellungen &gt; Datenschutzeinstellungen für Werbung einsehen, ändern oder widerrufen.</p>
+        <p>Weitere Informationen dazu, wie Google Daten in Partner-Apps verarbeitet, finden Sie hier: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
+
+        <h2>In-App-Käufe und Zahlungsdaten</h2>
+        <p>BG Remover bietet einen optionalen einmaligen In-App-Kauf „Alle Werbung entfernen“ (3,99 €) an, der sicher über die Google Play Billing Library abgewickelt wird. Alle Zahlungsvorgänge, Kreditkartendaten und Abrechnungsinformationen werden direkt und sicher von Google Play verarbeitet. BG Remover erfasst oder speichert Ihre Finanz- oder Kreditkarteninformationen nicht und hat keinen Zugriff darauf.</p>
+
+        <h2>Drittanbieter</h2>
+        <p>Wir verkaufen Ihre Informationen nicht und geben Ihre Fotos an niemanden weiter. Die einzigen von der App genutzten Drittanbieterdienste sind Google AdMob (Werbung) und Google Play (In-App-Käufe); für beide gelten, wie oben beschrieben, deren eigene Datenschutzerklärungen.</p>
+
+        <h2>Änderungen dieser Erklärung</h2>
+        <p>Wenn sich diese Erklärung ändert, wird die aktualisierte Version mit einem neuen Datum bei „Zuletzt aktualisiert“ auf dieser Seite veröffentlicht.</p>
+
+        <h2>Kontakt</h2>
+        <p>Fragen zu dieser Erklärung? Schreiben Sie uns an <a href="mailto:scualimail@gmail.com">scualimail@gmail.com</a>.</p>
+    </article>
+
+    <article lang="fr" data-lang="fr" hidden>
+        <h1>Politique de confidentialité de BG Remover</h1>
+        <p class="updated">Dernière mise à jour : 3 octobre 2026</p>
+
+        <p>BG Remover est publiée par ScualiMaster. Cette politique explique ce que l'application fait et ne fait pas de vos informations.</p>
+
+        <h2>Aucune collecte de vos photos ni de données personnelles</h2>
+        <p>Nous ne collectons, ne stockons ni ne partageons vos photos ni aucune donnée personnelle. Les seules données collectées via l'application le sont par Google AdMob à des fins publicitaires, comme décrit dans la section « Publicité et Google AdMob » ci-dessous.</p>
+
+        <h2>Traitement d&#x27;images par IA sur l&#x27;appareil</h2>
+        <p>BG Remover utilise l'API Subject Segmentation de Google ML Kit pour la suppression d'arrière-plan et l'isolation de sujets par IA. Tout le traitement des images s'effectue à 100 % localement sur votre appareil mobile. Vos photos, captures de l'appareil photo et images modifiées ne sont jamais envoyées, transmises ni stockées sur un serveur distant, et aucune donnée biométrique ni d'identification personnelle n'est collectée ou extraite.</p>
+
+        <h2>Autorisations</h2>
+        <p><strong>Appareil photo :</strong> utilisé uniquement pour prendre des photos dans l'application.</p>
+        <p><strong>Stockage :</strong> utilisé uniquement pour enregistrer vos images modifiées dans votre galerie.</p>
+
+        <h2>Publicité et Google AdMob</h2>
+        <p>BG Remover affiche des publicités fournies par Google AdMob. Google AdMob peut collecter et utiliser des identifiants d'appareil (tels que l'identifiant publicitaire Android), des informations réseau et des métriques de diagnostic afin de diffuser, personnaliser et mesurer les publicités.</p>
+        <p>Dans l'Espace économique européen (EEE) et au Royaume-Uni, le consentement à la personnalisation des annonces est géré via la boîte de dialogue de consentement de la plateforme de messagerie des utilisateurs (UMP) de Google. Les utilisateurs peuvent consulter, modifier ou révoquer à tout moment leurs choix de confidentialité publicitaire dans Paramètres &gt; Préférences de confidentialité des annonces au sein de l'application.</p>
+        <p>Pour en savoir plus sur la manière dont Google traite les données dans les applications partenaires, rendez-vous sur : <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
+
+        <h2>Achats intégrés et données de paiement</h2>
+        <p>BG Remover propose un achat intégré unique facultatif, « Supprimer toutes les publicités » (3,99 €), traité en toute sécurité par la bibliothèque Google Play Billing. Toutes les transactions de paiement, les données de carte bancaire et les informations de facturation sont gérées directement et en toute sécurité par Google Play. BG Remover ne collecte ni ne stocke vos informations financières ou de carte bancaire et n'y a pas accès.</p>
+
+        <h2>Tiers</h2>
+        <p>Nous ne vendons pas vos informations et ne partageons vos photos avec personne. Les seuls services tiers utilisés par l'application sont Google AdMob (publicité) et Google Play (achats intégrés), chacun étant régi par sa propre politique de confidentialité, comme décrit ci-dessus.</p>
+
+        <h2>Modifications de cette politique</h2>
+        <p>Si cette politique est modifiée, la version mise à jour sera publiée sur cette page avec une nouvelle date de « Dernière mise à jour ».</p>
+
+        <h2>Contact</h2>
+        <p>Des questions sur cette politique ? Écrivez-nous à <a href="mailto:scualimail@gmail.com">scualimail@gmail.com</a>.</p>
+    </article>
+
+    <article lang="it" data-lang="it" hidden>
+        <h1>Informativa sulla privacy di BG Remover</h1>
+        <p class="updated">Ultimo aggiornamento: 3 ottobre 2026</p>
+
+        <p>BG Remover è pubblicata da ScualiMaster. Questa informativa spiega cosa fa e cosa non fa l'app con le tue informazioni.</p>
+
+        <h2>Nessuna raccolta delle tue foto o dei tuoi dati personali</h2>
+        <p>Non raccogliamo, memorizziamo né condividiamo le tue foto o alcun dato personale. Gli unici dati raccolti tramite l'app sono quelli raccolti da Google AdMob a fini pubblicitari, come descritto nella sezione «Pubblicità e Google AdMob» qui sotto.</p>
+
+        <h2>Elaborazione delle immagini con IA sul dispositivo</h2>
+        <p>BG Remover utilizza l'API Subject Segmentation di Google ML Kit per la rimozione dello sfondo e l'isolamento del soggetto tramite IA. Tutta l'elaborazione delle immagini avviene al 100% in locale sul tuo dispositivo mobile. Le tue foto, gli scatti della fotocamera e le immagini modificate non vengono mai caricati, trasmessi o memorizzati su alcun server remoto, e non vengono raccolti né estratti dati biometrici o di identificazione personale.</p>
+
+        <h2>Autorizzazioni</h2>
+        <p><strong>Fotocamera:</strong> utilizzata solo per scattare foto all'interno dell'app.</p>
+        <p><strong>Archiviazione:</strong> utilizzata solo per salvare le immagini modificate nella tua galleria.</p>
+
+        <h2>Pubblicità e Google AdMob</h2>
+        <p>BG Remover mostra annunci forniti da Google AdMob. Google AdMob può raccogliere e utilizzare identificatori del dispositivo (come l'ID pubblicità di Android), informazioni di rete e metriche diagnostiche per pubblicare, personalizzare e misurare gli annunci.</p>
+        <p>Nello Spazio economico europeo (SEE) e nel Regno Unito, il consenso alla personalizzazione degli annunci viene gestito tramite la finestra di dialogo di consenso della User Messaging Platform (UMP) di Google. Gli utenti possono rivedere, modificare o revocare in qualsiasi momento le proprie scelte sulla privacy degli annunci in Impostazioni &gt; Preferenze sulla privacy degli annunci all'interno dell'app.</p>
+        <p>Per saperne di più su come Google gestisce i dati nelle app dei partner, visita: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
+
+        <h2>Acquisti in-app e dati di pagamento</h2>
+        <p>BG Remover offre un acquisto in-app facoltativo una tantum, «Rimuovi tutti gli annunci» (3,99 €), elaborato in modo sicuro tramite la Google Play Billing Library. Tutte le transazioni di pagamento, i dati delle carte di credito e le informazioni di fatturazione sono gestiti direttamente e in modo sicuro da Google Play. BG Remover non raccoglie né memorizza le tue informazioni finanziarie o della carta di credito e non vi ha accesso.</p>
+
+        <h2>Terze parti</h2>
+        <p>Non vendiamo le tue informazioni e non condividiamo le tue foto con nessuno. Gli unici servizi di terze parti utilizzati dall'app sono Google AdMob (pubblicità) e Google Play (acquisti in-app), ciascuno soggetto alla propria informativa sulla privacy, come descritto sopra.</p>
+
+        <h2>Modifiche a questa informativa</h2>
+        <p>Se questa informativa cambia, la versione aggiornata sarà pubblicata in questa pagina con una nuova data di «Ultimo aggiornamento».</p>
+
+        <h2>Contatti</h2>
+        <p>Domande su questa informativa? Scrivici a <a href="mailto:scualimail@gmail.com">scualimail@gmail.com</a>.</p>
+    </article>
+
+    <article lang="nl" data-lang="nl" hidden>
+        <h1>Privacybeleid van BG Remover</h1>
+        <p class="updated">Laatst bijgewerkt: 3 oktober 2026</p>
+
+        <p>BG Remover wordt uitgegeven door ScualiMaster. Dit beleid legt uit wat de app wel en niet doet met je gegevens.</p>
+
+        <h2>Geen verzameling van je foto&#x27;s of persoonlijke gegevens</h2>
+        <p>Wij verzamelen, bewaren of delen je foto's of andere persoonlijke gegevens niet. De enige gegevens die via de app worden verzameld, zijn die van Google AdMob voor advertentiedoeleinden, zoals beschreven in het onderdeel “Advertenties en Google AdMob” hieronder.</p>
+
+        <h2>AI-beeldverwerking op het apparaat</h2>
+        <p>BG Remover gebruikt de Google ML Kit Subject Segmentation API voor AI-gestuurde achtergrondverwijdering en het vrijstellen van onderwerpen. Alle beeldverwerking vindt voor 100% lokaal op je mobiele apparaat plaats. Je foto's, camerabeelden en bewerkte afbeeldingen worden nooit geüpload, verzonden of opgeslagen op een externe server, en er worden geen biometrische of persoonlijk identificeerbare gegevens verzameld of onttrokken.</p>
+
+        <h2>Rechten</h2>
+        <p><strong>Camera:</strong> wordt alleen gebruikt om foto's te maken in de app.</p>
+        <p><strong>Opslag:</strong> wordt alleen gebruikt om je bewerkte afbeeldingen in je galerij op te slaan.</p>
+
+        <h2>Advertenties en Google AdMob</h2>
+        <p>BG Remover toont advertenties van Google AdMob. Google AdMob kan apparaat-ID's (zoals de Android-advertentie-ID), netwerkinformatie en diagnostische gegevens verzamelen en gebruiken om advertenties weer te geven, te personaliseren en te meten.</p>
+        <p>In de Europese Economische Ruimte (EER) en het Verenigd Koninkrijk wordt toestemming voor advertentiepersonalisatie beheerd via het toestemmingsvenster van het User Messaging Platform (UMP) van Google. Gebruikers kunnen hun advertentieprivacykeuzes op elk moment bekijken, aanpassen of intrekken in de app via Instellingen &gt; Voorkeuren voor advertentieprivacy.</p>
+        <p>Meer informatie over hoe Google omgaat met gegevens in apps van partners vind je op: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
+
+        <h2>Aankopen in de app en betalingsgegevens</h2>
+        <p>BG Remover biedt een optionele eenmalige in-app-aankoop “Alle advertenties verwijderen” (€ 3,99) aan, die veilig wordt verwerkt via de Google Play Billing Library. Alle betalingstransacties, creditcardgegevens en factuurgegevens worden rechtstreeks en veilig afgehandeld door Google Play. BG Remover verzamelt of bewaart je financiële of creditcardgegevens niet en heeft er geen toegang toe.</p>
+
+        <h2>Derden</h2>
+        <p>Wij verkopen je gegevens niet en delen je foto's met niemand. De enige diensten van derden die de app gebruikt, zijn Google AdMob (advertenties) en Google Play (in-app-aankopen); op beide is hun eigen privacybeleid van toepassing, zoals hierboven beschreven.</p>
+
+        <h2>Wijzigingen in dit beleid</h2>
+        <p>Als dit beleid wordt gewijzigd, wordt de bijgewerkte versie op deze pagina geplaatst met een nieuwe datum bij “Laatst bijgewerkt”.</p>
+
+        <h2>Contact</h2>
+        <p>Vragen over dit beleid? Mail ons op <a href="mailto:scualimail@gmail.com">scualimail@gmail.com</a>.</p>
+    </article>
+
+    <article lang="pt" data-lang="pt" hidden>
+        <h1>Política de Privacidade do BG Remover</h1>
+        <p class="updated">Última atualização: 3 de outubro de 2026</p>
+
+        <p>O BG Remover é publicado por ScualiMaster. Esta política explica o que o aplicativo faz e não faz com as suas informações.</p>
+
+        <h2>Nenhuma coleta de suas fotos ou dados pessoais</h2>
+        <p>Não coletamos, armazenamos nem compartilhamos suas fotos ou quaisquer dados pessoais. Os únicos dados coletados por meio do aplicativo são os do Google AdMob para fins de publicidade, conforme descrito na seção “Publicidade e Google AdMob” abaixo.</p>
+
+        <h2>Processamento de imagens com IA no dispositivo</h2>
+        <p>O BG Remover utiliza a API Subject Segmentation do Google ML Kit para remoção de fundo e isolamento de assuntos com IA. Todo o processamento de imagens ocorre 100% localmente no seu dispositivo móvel. Suas fotos, capturas da câmera e imagens editadas nunca são enviadas, transmitidas ou armazenadas em nenhum servidor remoto, e nenhum dado biométrico ou de identificação pessoal é coletado ou extraído.</p>
+
+        <h2>Permissões</h2>
+        <p><strong>Câmera:</strong> usada apenas para tirar fotos dentro do aplicativo.</p>
+        <p><strong>Armazenamento:</strong> usado apenas para salvar suas imagens editadas na galeria.</p>
+
+        <h2>Publicidade e Google AdMob</h2>
+        <p>O BG Remover exibe anúncios fornecidos pelo Google AdMob. O Google AdMob pode coletar e usar identificadores de dispositivo (como o ID de publicidade do Android), informações de rede e métricas de diagnóstico para exibir, personalizar e medir anúncios.</p>
+        <p>No Espaço Econômico Europeu (EEE) e no Reino Unido, o consentimento para a personalização de anúncios é gerenciado por meio da caixa de diálogo de consentimento da User Messaging Platform (UMP) do Google. Os usuários podem revisar, ajustar ou revogar suas escolhas de privacidade de anúncios a qualquer momento em Configurações &gt; Preferências de privacidade de anúncios dentro do aplicativo.</p>
+        <p>Para saber mais sobre como o Google trata os dados em aplicativos de parceiros, acesse: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
+
+        <h2>Compras no aplicativo e dados de pagamento</h2>
+        <p>O BG Remover oferece uma compra opcional única no aplicativo, “Remover todos os anúncios” (€ 3,99), processada com segurança pela Google Play Billing Library. Todas as transações de pagamento, dados de cartão de crédito e informações de cobrança são tratados diretamente e com segurança pelo Google Play. O BG Remover não coleta nem armazena suas informações financeiras ou de cartão de crédito e não tem acesso a elas.</p>
+
+        <h2>Terceiros</h2>
+        <p>Não vendemos suas informações nem compartilhamos suas fotos com ninguém. Os únicos serviços de terceiros usados pelo aplicativo são o Google AdMob (publicidade) e o Google Play (compras no aplicativo), cada um regido por sua própria política de privacidade, conforme descrito acima.</p>
+
+        <h2>Alterações nesta política</h2>
+        <p>Se esta política for alterada, a versão atualizada será publicada nesta página com uma nova data de “Última atualização”.</p>
+
+        <h2>Contato</h2>
+        <p>Dúvidas sobre esta política? Envie um e-mail para <a href="mailto:scualimail@gmail.com">scualimail@gmail.com</a>.</p>
+    </article>
+
+    <article lang="ru" data-lang="ru" hidden>
+        <h1>Политика конфиденциальности BG Remover</h1>
+        <p class="updated">Последнее обновление: 3 октября 2026 г.</p>
+
+        <p>BG Remover опубликовано разработчиком ScualiMaster. В этой политике объясняется, что приложение делает и чего не делает с вашей информацией.</p>
+
+        <h2>Мы не собираем ваши фотографии и персональные данные</h2>
+        <p>Мы не собираем, не храним и не передаём ваши фотографии или какие-либо персональные данные. Единственные данные, собираемые через приложение, — это данные, которые собирает Google AdMob в рекламных целях, как описано в разделе «Реклама и Google AdMob» ниже.</p>
+
+        <h2>Обработка изображений с помощью ИИ на устройстве</h2>
+        <p>BG Remover использует API Subject Segmentation из Google ML Kit для удаления фона и выделения объектов с помощью ИИ. Вся обработка изображений выполняется на 100 % локально на вашем мобильном устройстве. Ваши фотографии, снимки с камеры и отредактированные изображения никогда не загружаются, не передаются и не хранятся на каких-либо удалённых серверах, а биометрические и идентифицирующие личность данные не собираются и не извлекаются.</p>
+
+        <h2>Разрешения</h2>
+        <p><strong>Камера:</strong> используется только для съёмки фотографий внутри приложения.</p>
+        <p><strong>Хранилище:</strong> используется только для сохранения отредактированных изображений в вашу галерею.</p>
+
+        <h2>Реклама и Google AdMob</h2>
+        <p>BG Remover показывает рекламу, предоставляемую Google AdMob. Google AdMob может собирать и использовать идентификаторы устройства (например, рекламный идентификатор Android), сетевую информацию и диагностические показатели для показа, персонализации и измерения эффективности рекламы.</p>
+        <p>В Европейской экономической зоне (ЕЭЗ) и Великобритании согласие на персонализацию рекламы запрашивается через диалоговое окно согласия платформы Google User Messaging Platform (UMP). Пользователи могут в любое время просмотреть, изменить или отозвать свой выбор в отношении конфиденциальности рекламы в разделе «Настройки» &gt; «Настройки конфиденциальности рекламы» внутри приложения.</p>
+        <p>Подробнее о том, как Google обрабатывает данные в приложениях партнёров, читайте здесь: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
+
+        <h2>Покупки в приложении и платёжные данные</h2>
+        <p>BG Remover предлагает дополнительную одноразовую покупку в приложении «Удалить всю рекламу» (3,99 €), которая безопасно обрабатывается через Google Play Billing Library. Все платёжные операции, данные банковских карт и платёжная информация обрабатываются непосредственно и безопасно Google Play. BG Remover не собирает и не хранит вашу финансовую информацию и данные банковской карты и не имеет к ним доступа.</p>
+
+        <h2>Третьи стороны</h2>
+        <p>Мы не продаём вашу информацию и не передаём ваши фотографии кому-либо. Единственные сторонние сервисы, используемые приложением, — это Google AdMob (реклама) и Google Play (покупки в приложении); на каждый из них распространяется собственная политика конфиденциальности, как описано выше.</p>
+
+        <h2>Изменения в этой политике</h2>
+        <p>В случае изменения этой политики обновлённая версия будет опубликована на этой странице с новой датой «Последнее обновление».</p>
+
+        <h2>Контакты</h2>
+        <p>Есть вопросы по этой политике? Напишите нам: <a href="mailto:scualimail@gmail.com">scualimail@gmail.com</a>.</p>
+    </article>
+
+    <article lang="zh" data-lang="zh" hidden>
+        <h1>BG Remover 隐私政策</h1>
+        <p class="updated">最后更新:2026年10月3日</p>
+
+        <p>BG Remover 由 ScualiMaster 发布。本政策说明本应用会如何处理以及不会如何处理您的信息。</p>
+
+        <h2>不收集您的照片或个人数据</h2>
+        <p>我们不会收集、存储或分享您的照片或任何个人数据。通过本应用收集的唯一数据来自 Google AdMob,仅用于广告目的,详见下文“广告与 Google AdMob”部分。</p>
+
+        <h2>设备端 AI 图像处理</h2>
+        <p>BG Remover 使用 Google ML Kit Subject Segmentation API 实现基于 AI 的背景移除和主体提取。所有图像处理均 100% 在您的移动设备本地完成。您的照片、相机拍摄内容和编辑后的图像绝不会被上传、传输或存储到任何远程服务器,也不会收集或提取任何生物识别或个人身份识别数据。</p>
+
+        <h2>权限</h2>
+        <p><strong>相机:</strong> 仅用于在应用内拍摄照片。</p>
+        <p><strong>存储:</strong> 仅用于将您编辑后的图像保存到相册。</p>
+
+        <h2>广告与 Google AdMob</h2>
+        <p>BG Remover 展示由 Google AdMob 提供的广告。Google AdMob 可能会收集并使用设备标识符(例如 Android 广告 ID)、网络信息和诊断指标,以投放、个性化和衡量广告效果。</p>
+        <p>在欧洲经济区(EEA)和英国,广告个性化同意通过 Google 的用户消息平台(UMP)同意对话框进行管理。用户可随时在应用内的“设置 &gt; 广告隐私偏好”中查看、调整或撤销其广告隐私选择。</p>
+        <p>如需详细了解 Google 如何处理合作伙伴应用中的数据,请访问:<a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
+
+        <h2>应用内购买与支付数据</h2>
+        <p>BG Remover 提供可选的一次性应用内购买“移除所有广告”(3.99 欧元),由 Google Play Billing Library 安全处理。所有支付交易、信用卡信息和账单信息均由 Google Play 直接且安全地处理。BG Remover 不会收集或存储您的财务或信用卡信息,也无法访问这些信息。</p>
+
+        <h2>第三方</h2>
+        <p>我们不会出售您的信息,也不会与任何人分享您的照片。本应用使用的第三方服务仅有 Google AdMob(广告)和 Google Play(应用内购买),它们各自适用其自身的隐私政策,详见上文。</p>
+
+        <h2>本政策的变更</h2>
+        <p>如本政策发生变更,更新后的版本将发布在本页面,并更新“最后更新”日期。</p>
+
+        <h2>联系我们</h2>
+        <p>对本政策有疑问?请发送邮件至 <a href="mailto:scualimail@gmail.com">scualimail@gmail.com</a>。</p>
+    </article>
+
+    <article lang="ja" data-lang="ja" hidden>
+        <h1>BG Remover プライバシーポリシー</h1>
+        <p class="updated">最終更新日:2026年10月3日</p>
+
+        <p>BG Remover は ScualiMaster によって公開されています。本ポリシーでは、本アプリがお客様の情報をどのように扱い、また扱わないかについて説明します。</p>
+
+        <h2>写真や個人データは収集しません</h2>
+        <p>当社は、お客様の写真やその他の個人データを収集、保存、共有しません。本アプリを通じて収集されるデータは、下記「広告と Google AdMob」に記載のとおり、広告目的で Google AdMob が収集するデータのみです。</p>
+
+        <h2>デバイス上での AI 画像処理</h2>
+        <p>BG Remover は、AI による背景除去と被写体の切り抜きに Google ML Kit Subject Segmentation API を利用しています。すべての画像処理は、お客様のモバイルデバイス上で 100% ローカルに行われます。お客様の写真、カメラで撮影した画像、編集後の画像が、リモートサーバーにアップロード、送信、保存されることは一切なく、生体情報や個人を特定できるデータも収集・抽出されません。</p>
+
+        <h2>権限</h2>
+        <p><strong>カメラ:</strong> アプリ内で写真を撮影する場合にのみ使用します。</p>
+        <p><strong>ストレージ:</strong> 編集した画像をギャラリーに保存する場合にのみ使用します。</p>
+
+        <h2>広告と Google AdMob</h2>
+        <p>BG Remover では、Google AdMob が提供する広告を表示します。Google AdMob は、広告の配信、パーソナライズ、効果測定のために、デバイス識別子(Android 広告 ID など)、ネットワーク情報、診断情報を収集・使用する場合があります。</p>
+        <p>欧州経済領域(EEA)および英国では、広告のパーソナライズに関する同意は、Google のユーザー メッセージ プラットフォーム(UMP)の同意ダイアログで管理されます。ユーザーは、アプリ内の「設定 &gt; 広告のプライバシー設定」でいつでも広告に関するプライバシーの選択内容を確認、変更、または撤回できます。</p>
+        <p>パートナーアプリにおける Google のデータの取り扱いについて詳しくは、こちらをご覧ください:<a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
+
+        <h2>アプリ内購入と支払いデータ</h2>
+        <p>BG Remover では、任意の買い切り型アプリ内購入「広告をすべて削除」(3.99ユーロ)を提供しており、Google Play 課金ライブラリにより安全に処理されます。すべての支払い取引、クレジットカード情報、請求情報は、Google Play が直接かつ安全に処理します。BG Remover は、お客様の金融情報やクレジットカード情報を収集・保存せず、アクセスすることもありません。</p>
+
+        <h2>第三者</h2>
+        <p>当社はお客様の情報を販売せず、写真を誰とも共有しません。本アプリが利用する第三者サービスは Google AdMob(広告)と Google Play(アプリ内購入)のみで、それぞれ上記のとおり各社のプライバシーポリシーが適用されます。</p>
+
+        <h2>本ポリシーの変更</h2>
+        <p>本ポリシーが変更された場合、更新版は「最終更新日」を新しい日付にして本ページに掲載されます。</p>
+
+        <h2>お問い合わせ</h2>
+        <p>本ポリシーに関するご質問は、<a href="mailto:scualimail@gmail.com">scualimail@gmail.com</a> までメールでお問い合わせください。</p>
+    </article>
+
+    <script>
+        (function () {
+            var titles = {"en": "Privacy Policy for BG Remover", "es": "Política de privacidad de BG Remover", "de": "Datenschutzerklärung für BG Remover", "fr": "Politique de confidentialité de BG Remover", "it": "Informativa sulla privacy di BG Remover", "nl": "Privacybeleid van BG Remover", "pt": "Política de Privacidade do BG Remover", "ru": "Политика конфиденциальности BG Remover", "zh": "BG Remover 隐私政策", "ja": "BG Remover プライバシーポリシー"};
+            var select = document.getElementById("lang-select");
+            var articles = document.querySelectorAll("article[data-lang]");
+            var supported = Object.keys(titles);
+
+            function apply(code) {
+                if (supported.indexOf(code) === -1) code = "en";
+                for (var i = 0; i < articles.length; i++) {
+                    articles[i].hidden = articles[i].getAttribute("data-lang") !== code;
+                }
+                select.value = code;
+                document.documentElement.lang = code;
+                document.title = titles[code];
+            }
+
+            function initial() {
+                var q = new URLSearchParams(location.search).get("lang");
+                if (q && supported.indexOf(q.toLowerCase()) !== -1) return q.toLowerCase();
+                try {
+                    var saved = localStorage.getItem("bgr-policy-lang");
+                    if (saved && supported.indexOf(saved) !== -1) return saved;
+                } catch (e) {}
+                var langs = navigator.languages || [navigator.language || "en"];
+                for (var i = 0; i < langs.length; i++) {
+                    var base = String(langs[i]).toLowerCase().split("-")[0];
+                    if (supported.indexOf(base) !== -1) return base;
+                }
+                return "en";
+            }
+
+            select.addEventListener("change", function () {
+                apply(select.value);
+                try { localStorage.setItem("bgr-policy-lang", select.value); } catch (e) {}
+            });
+
+            apply(initial());
+        })();
+    </script>
 </body>
 </html>
